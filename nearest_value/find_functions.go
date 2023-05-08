@@ -1,4 +1,4 @@
-package closest_value
+package nearest_value
 
 const numWords, wordLen = 30, 8
 

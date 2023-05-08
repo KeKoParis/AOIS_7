@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	findC "lab7/closest_value"
+	findC "lab7/nearest_value"
 	"math/rand"
 )
 
