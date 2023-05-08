@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	findC "lab7/nearest_value"
+	findF "lab7/find_functions"
 	"math/rand"
 )
 
@@ -28,11 +28,21 @@ func main() {
 	//	fmt.Println(i, ": ", arr[i])
 	//}
 
-	var find [8]int32
+	var find, top, bottom [8]int32
 	find = arr[2]
+	top = arr[5]
+	bottom = arr[2]
 
 	fmt.Println("Nearest-bottom")
 	fmt.Println("Find ", find)
 
-	fmt.Println("     ", findC.FindLess(arr, find))
+	fmt.Println("Less ", findF.FindLess(arr, find))
+	fmt.Println("More ", findF.FindMore(arr, find))
+
+	fmt.Println("\nTop ", top, "  Bottom ", bottom)
+	fmt.Println("Interval")
+	interval := findF.FindInterval(arr, top, bottom)
+	for i := range interval {
+		fmt.Println(interval[i])
+	}
 }

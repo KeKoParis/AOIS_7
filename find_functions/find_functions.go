@@ -1,4 +1,4 @@
-package nearest_value
+package find_functions
 
 const numWords, wordLen = 30, 8
 
@@ -27,6 +27,38 @@ func FindLess(arr [numWords][wordLen]int32, attribute [wordLen]int32) [wordLen]i
 		g, l = 0, 0
 		g, l = find(arrLess[i], currBiggest, g, l, wordLen-1)
 		if g == 1 && l == 0 {
+			currBiggest = arrLess[i]
+		}
+	}
+
+	return currBiggest
+}
+
+func FindMore(arr [numWords][wordLen]int32, attribute [wordLen]int32) [wordLen]int32 {
+	var g, l int32 = 0, 0
+	var arrLess [][wordLen]int32
+
+	for i := range arr {
+		g, l = find(arr[i], attribute, g, l, wordLen-1)
+		if g == 1 && l == 0 {
+			arrLess = append(arrLess, arr[i])
+		}
+		g, l = 0, 0
+	}
+	//for i := range arrLess {
+	//	fmt.Println(arrLess[i])
+	//}
+
+	if len(arrLess) == 0 {
+		var a [wordLen]int32
+		return a
+	}
+
+	currBiggest := arrLess[0]
+	for i := range arrLess {
+		g, l = 0, 0
+		g, l = find(arrLess[i], currBiggest, g, l, wordLen-1)
+		if g == 0 && l == 1 {
 			currBiggest = arrLess[i]
 		}
 	}
