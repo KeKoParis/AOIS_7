@@ -13,9 +13,6 @@ func FindLess(arr [numWords][wordLen]int32, attribute [wordLen]int32) [wordLen]i
 		}
 		g, l = 0, 0
 	}
-	//for i := range arrLess {
-	//	fmt.Println(arrLess[i])
-	//}
 
 	if len(arrLess) == 0 {
 		var a [wordLen]int32
@@ -45,9 +42,6 @@ func FindMore(arr [numWords][wordLen]int32, attribute [wordLen]int32) [wordLen]i
 		}
 		g, l = 0, 0
 	}
-	//for i := range arrLess {
-	//	fmt.Println(arrLess[i])
-	//}
 
 	if len(arrLess) == 0 {
 		var a [wordLen]int32

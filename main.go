@@ -24,9 +24,9 @@ func main() {
 
 	arr := wordsArray()
 
-	//for i := range arr {
-	//	fmt.Println(i, ": ", arr[i])
-	//}
+	for i := range arr {
+		fmt.Println(i, ": ", arr[i])
+	}
 
 	var find, top, bottom [8]int32
 	find = arr[2]
@@ -39,7 +39,7 @@ func main() {
 	fmt.Println("Less ", findF.FindLess(arr, find))
 	fmt.Println("More ", findF.FindMore(arr, find))
 
-	fmt.Println("\nTop ", top, "  Bottom ", bottom)
+	fmt.Println("\nInterval\nTop ", top, "  Bottom ", bottom)
 	fmt.Println("Interval")
 	interval := findF.FindInterval(arr, top, bottom)
 	for i := range interval {
